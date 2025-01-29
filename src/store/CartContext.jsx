@@ -31,7 +31,7 @@ function cartReducer(state, action) {
       (item) => item.id === action.id
     );
 
-    const existingCartItem = state[existingCartItemIndex];
+    const existingCartItem = state.items[existingCartItemIndex];
     const updatedItems = [...state.items];
 
     if (existingCartItem.quantity === 1) {
@@ -43,8 +43,9 @@ function cartReducer(state, action) {
       };
       updatedItems[existingCartItemIndex] = updatedItem;
     }
+    console.log(updatedItems);
 
-    return updatedItems;
+    return { ...state, items: updatedItems };
   }
   return state;
 }
