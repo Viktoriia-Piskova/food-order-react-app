@@ -4,7 +4,7 @@ const Input = ({ label, id, required = true, ...props }) => {
   return (
     <p className="control">
       <label htmlFor={id}>{label}</label>
-      <input type="text" id={id} name={id} {...props} required />
+      <input type="text" id={id} name={id} {...props} required={required} />
     </p>
   );
 };
